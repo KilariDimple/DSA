@@ -1,15 +1,15 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int k = 0;  // k keeps track of elements not equal to val
-        
-        // Loop through all elements
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[k] = nums[i];  // Keep elements that are not val
-                k++;
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val){
+                nums[count]=nums[i];
+                count++;
             }
+            // i++;
         }
-        
-        return k; // Return the count of elements not equal to val
+        int ans=nums.length-count;
+        // int new arr[]={}
+        return count;
     }
 }
