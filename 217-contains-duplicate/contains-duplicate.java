@@ -5,6 +5,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             if(hm.containsKey(nums[i])){
                 ans=true;
+                return ans;
                 // int prev=hm.get(arr[i]);
                 // hm.put
             }
