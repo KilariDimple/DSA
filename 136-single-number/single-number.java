@@ -11,15 +11,14 @@ class Solution {
                 hm.put(ch,1);
             }
         }
-int ans=0;
-int resultKey=0;
-for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
-    if (entry.getValue()==1) {
-         resultKey = entry.getKey();
-        ans=resultKey;
-    }
-}
-return resultKey;
+// int ans=0;
+// int resultKey=0;
+        for (int key : hm.keySet()) {
+            if (hm.get(key) == 1) {
+                return key;
+            }
+        }
+return 0;
 
         
     }
