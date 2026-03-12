@@ -22,10 +22,14 @@ class Solution {
         k=k%length;
         tail.next = head; 
            ListNode temp=head;
-           int ans=length-k;
-           for(int i=0;i<ans-1;i++){
+           int ans=length-k-1;
+        //    int i=0;
+           for(int i=0;i<ans;i++){
                 temp=temp.next;
            }
+        // while(i<k){ 
+        //     temp=temp.next; i++;
+        //      }
           head=temp.next;
           temp.next=null;
 
