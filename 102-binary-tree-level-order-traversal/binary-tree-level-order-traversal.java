@@ -21,7 +21,7 @@ class Solution {
         q.offer(root);
         while(!q.isEmpty()){
             int level=q.size();
-            LinkedList<Integer> l=new LinkedList<Integer>();
+            LinkedList<Integer> l=new LinkedList<>();
              for(int i=0;i<level;i++){
                 if(q.peek().left!=null){
                     q.offer(q.peek().left);
