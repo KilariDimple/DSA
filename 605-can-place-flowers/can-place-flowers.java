@@ -1,26 +1,27 @@
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
-
-        int count = 1; // start with 1 to handle left boundary
-
-        for (int i = 0; i < flowerbed.length; i++) {
-
-            if (flowerbed[i] == 0) {
+        int count=1;
+        boolean
+         ans=false;
+        for(int i=0;i<flowerbed.length;i++){
+            if(flowerbed[i]==0){
                 count++;
-
-                if (count == 3) {
+                if(count==3){
                     n--;
-                    count = 1; // reset to 1 (important fix)
+                    count=1;
                 }
-            } 
-            else {
-                count = 0;
+            }
+            else{
+                count =0;
             }
         }
-
-        // handle right boundary
-        if (count == 2) n--;
-
-        return n <= 0;
+        if(count==2){
+            n--;
+        }
+        if(n<=0){
+            ans=true;
+        }
+        return ans;
+        
     }
 }
