@@ -3,11 +3,12 @@ class Solution {
         int count=1;
         boolean
          ans=false;
+         int k=000;
         for(int i=0;i<flowerbed.length;i++){
             if(flowerbed[i]==0){
                 count++;
                 if(count==3){
-                    n--;
+                    k++;
                     count=1;
                 }
             }
@@ -16,9 +17,9 @@ class Solution {
             }
         }
         if(count==2){
-            n--;
+            k++;
         }
-        if(n<=0){
+        if(k>=n){
             ans=true;
         }
         return ans;
