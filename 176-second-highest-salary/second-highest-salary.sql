@@ -4,7 +4,7 @@
 --      FROM Employee 
 --      ORDER BY salary DESC 
 --      LIMIT 1 OFFSET 1) AS SecondHighestSalary;
-
+--
 select(
     select distinct salary
     from employee 
