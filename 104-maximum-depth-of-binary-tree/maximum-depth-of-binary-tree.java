@@ -13,27 +13,79 @@
  *     }
  * }
  */
+// class Solution {
+//     public int maxDepth(TreeNode root) {
+//         if(root==null){
+//             return 0;
+//         }
+//         Queue<TreeNode> q=new LinkedList<>();
+//         int ans=0;
+//         q.offer(root);
+//         while(!q.isEmpty()){
+//             int length=q.size();
+//             for(int i=0;i<length;i++){
+//                 TreeNode node=q.poll();
+//                 if(node.left!=null){
+//                     q.offer(node.left);
+//                 }
+//                 if(node.right!=null){
+//                     q.offer(node.right);
+//                 }
+//             }
+//             ans++;
+//         }
+//         return ans;
+//     }
+// }
+
+
 class Solution {
     public int maxDepth(TreeNode root) {
-        if(root==null){
-            return 0;
-        }
-        Queue<TreeNode> q=new LinkedList<>();
-        int ans=0;
-        q.offer(root);
-        while(!q.isEmpty()){
-            int length=q.size();
-            for(int i=0;i<length;i++){
-                TreeNode node=q.poll();
-                if(node.left!=null){
-                    q.offer(node.left);
-                }
-                if(node.right!=null){
-                    q.offer(node.right);
-                }
-            }
-            ans++;
-        }
-        return ans;
+        if(root==null) return 0;
+        int l=maxDepth(root.left);
+        int r=maxDepth(root.right);
+        return 1+Math.max(l,r);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Solution {
+//     public int maxDepth(TreeNode root) {
+
+//         // Base case
+//         if (root == null)
+//             return 0;
+
+//         // Recursive calls
+//         int left = maxDepth(root.left);
+//         int right = maxDepth(root.right);
+
+//         // Return answer
+//         return 1 + Math.max(left, right);
+//     }
+// }
