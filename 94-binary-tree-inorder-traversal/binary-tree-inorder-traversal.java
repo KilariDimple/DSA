@@ -31,44 +31,60 @@
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Solution {
-    
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result=new ArrayList<>();
-        Helper(root,result);
-        return result;
+    List<Integer> result=new ArrayList<>();
+    Stack<TreeNode> st=new Stack<>();
+    TreeNode  curr=root;
+    while(curr!=null || !st.isEmpty()){
+        while(curr!=null){
+            st.push(curr);
+            curr=curr.left;
+        }
+        curr=st.pop();
+        result.add(curr.val);
+        curr=curr.right;
+        
     }
-    public void Helper(TreeNode root,List<Integer> result){
-        if(root==null) return;
-        Helper(root.left,result);
-        result.add(root.val);
-        Helper(root.right,result);
-
+    return result;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Solution {
+    
+//     public List<Integer> inorderTraversal(TreeNode root) {
+//         List<Integer> result=new ArrayList<>();
+//         Helper(root,result);
+//         return result;
+//     }
+//     public void Helper(TreeNode root,List<Integer> result){
+//         if(root==null) return;
+//         Helper(root.left,result);
+//         result.add(root.val);
+//         Helper(root.right,result);
+
+//     }
+// }
